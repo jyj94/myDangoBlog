@@ -30,6 +30,20 @@
     </div>
 
     {% endfor %}
-
+<div class="page_number">
+        <hr>
+            
+            {% if page_info.has_previous %}
+                <a class="page_number_a" href="?page_info={{ page_info.previous_page_number }}">이전으로</a>
+            {% endif %}
+                
+            {% if page_info.has_next %}
+                <a class="page_number_a" href="?page_info={{ page_info.next_page_number }}"> 다음으로</a>
+            {% endif %}
+    </div>    
+   
 </div>
+
+
+
 {% endblock %}

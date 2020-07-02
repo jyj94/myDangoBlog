@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blogapp.views.index, name='index'),
     path('search/', blogapp.views.search, name='search'),
-    path('catagory/', blogapp.views.catagory, name='catagory'),
+    path('category/', blogapp.views.category, name='category'),
     path('post_view/', blogapp.views.post_view, name='post_view'),
     path('post_write/', blogapp.views.post_write, name='post_write'),
 ]
