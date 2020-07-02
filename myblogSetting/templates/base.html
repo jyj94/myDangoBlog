@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  
+</head>
+
+<body>
+
+    <nav class="navigation">
+        
+        <a class="logo" href="{% url 'index' %}">jyj's blog</a>
+        
+        <a class="search_button" href="{% url 'search' %}">
+            <img class="search_button_image" src="{% static 'img/search_button.png'%}">
+        </a>
+    
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    
+</body>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="post_write_main_frame">
+<h3>글쓰기</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="저장"/>
+    </form>
+</div>
+{% endblock %}
