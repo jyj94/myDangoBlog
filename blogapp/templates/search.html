@@ -3,8 +3,30 @@
 {% block content %}
 
 <div class="search_main_frame">
-    <div class="search_bar">
+    <div class="search_form">
+        <form method="get">
+            {% if keyword != None %}
+                <input class="text_box" type="text" name="keyword" value="{{ keyword }}">
+            {% else %}
+                <input class="text_box" type="text" name="keyword" value="">
+            {% endif %}
+            <input class="button" type="submit" value="검색">
+        </form>
+    <div>
+    
+    {% for post in post_result %}
+    <div class="first_post">
+        <a href="">
+            <img srcset="{{ post.file_dir }}title_image.jpg">
+            <h1> {{ post.title }} </h1>
+            <p class="first_post_detail">{{ post.author }} {{ post.pub_date }} {{ post.category }}</p>
+            <p class="first_post_p">{{ post.content }}</p> 
+        </a>
+        
     </div>
+    <hr>
+    {% endfor %}
+
 </div>
 
 {% endblock %}

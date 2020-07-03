@@ -9,13 +9,21 @@ def index(request):
     page_info = request.GET.get('page_info')
     page_info = paginator.get_page(page_info)
     posts = list(page_info)
-    post = posts[0]
-    posts = posts[1:]
+    post = 0
+    if posts :
+        post = posts[0]
+        posts = posts[1:]
     
     return render(request, 'index.html', {'post':post, 'posts':posts, 'page_info':page_info})
 
 def search(request):
-    return render(request, 'search.html')
+    post_list = Post.objects.all().order_by('-id')
+    keyword = request.GET.get('keyword')
+    post_result = []
+    if keyword:
+        post_result=list(post_list.filter(title=keyword))
+        print(post_result)
+    return render(request, 'search.html', {'post_result' : post_result, 'keyword': keyword})
 
 def category(request):
     return render(request, 'category.html')

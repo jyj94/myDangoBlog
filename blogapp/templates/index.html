@@ -1,49 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="index_main_frame">
+<div class="first_post">
     <a href="">
-        <img class="first_post_image" srcset="{{ post.file_dir }}title_image.jpg">
-        <div class="first_post">
-            <article>
-                <h1 class="first_article_h1">{{ post.title }} </h1>
-                <p class="first_article_detail">{{ post.pub_date }} {{ post.author }}</p>
-                <p class="first_article_p">{{ post.content }}</p>
-            </article>
-        </div>
+        <img srcset="{{ post.file_dir }}title_image.jpg">
+        <h1> {{ post.title }} </h1>
+        <p class="first_post_detail">{{ post.author }} {{ post.pub_date }} {{ post.category }}</p>
+        <p class="first_post_p">{{ post.content }}</p> 
     </a>
-    
-    <hr>
-    
-    {% for other_post in posts %}
-
-    <div class="other_post">
-        <article>
-            <a href="">
-                <img class="other_post_image" srcset="{{ other_post.file_dir }}title_image.jpg">
-                <h1 class="other_article_h1">{{ other_post.title}}</h1>
-                <p class="other_article_detail">{{ other_post.pub_date }} {{ other_post.author }}</p>
-                <p class="other_article_p">{{ other_post.content }}</p>
-            </a>
-        </article>
-    </div>
-
-    {% endfor %}
-<div class="page_number">
-        <hr>
-            
-            {% if page_info.has_previous %}
-                <a class="page_number_a" href="?page_info={{ page_info.previous_page_number }}">이전으로</a>
-            {% endif %}
-                
-            {% if page_info.has_next %}
-                <a class="page_number_a" href="?page_info={{ page_info.next_page_number }}"> 다음으로</a>
-            {% endif %}
-    </div>    
-   
 </div>
 
+<hr>
 
+<div class="other_post_layout">
+    {% for other_post in posts %} 
+        <div class="other_post">   
+            <a href="">
+                <img srcset="{{ other_post.file_dir }}title_image.jpg">
+                <h1>{{ other_post.title}}</h1>
+                <p class="other_post_detail">{{ other_post.author }} {{ other_post.pub_date }} {{ other_post.category }}</p>
+                <p class="other_post_p">{{ other_post.content }}</p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+<div class="page_number">
+       
+    {% if page_info.has_previous %}
+        <a class="page_number_a" href="?page_info={{ page_info.previous_page_number }}">이전으로</a>
+    {% endif %}
+        
+    {% if page_info.has_next %}
+        <a class="page_number_a" href="?page_info={{ page_info.next_page_number }}"> 다음으로</a>
+    {% endif %}
+    
+</div>
 
 {% endblock %}

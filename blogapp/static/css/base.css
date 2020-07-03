@@ -32,105 +32,105 @@
   max-height: 50px;
 }
 
-li {
-  display: inline;
+.wrap {
+  background-color: rgb(255, 255, 255);
+  width : 920px;
+  margin-top: 70px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 /*index.html*/
-.index_main_frame {
-  position:absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
+.first_post {
+  width : 920px;
+  height: 300px;
 }
 
-.first_post_image {
+.first_post a {
+  color: black;
+  text-decoration: none;
+}
+
+.first_post img {
   width: 300px;
   height: 300px;
   float: left;
-  margin-right: 4px;
+  margin-right: 5px;
 }
 
-.first_post {
-  width: 920px;
-  height: 270px;
-  word-break:break-all;
-  margin-bottom: 15px;
-}
+.first_post h1 {
+  width: 610px;
+  position: relative;
+  top: 20px;
 
-.first_article_h1 {
-  font-family: sans-serif;
-  font-size: 32px;
-  margin-bottom: 2px;
-  color: black;
-  width: 600px;
+  /*말줄임*/
   max-height: 100px;
   display: -webkit-box;
-  margin-top: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  word-wrap: break-word;
 
 }
 
-.first_article_detail{
-  font-family: sans-serif;
-  font-size: 15px;
-  color: dimgrey;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  
+.first_post_detail {
+  width: 610px;
+  height: 10px;
+  position: relative;
+  top: 20px;
 }
 
-.first_article_p {
-  font-family: sans-serif;
-  font-size: 24px;
-  color: black;
-  width: 600px;
+.first_post_p {
+  width: 610px;
+  position: relative;
+  top: 30px;
+
+  /*말줄임*/
   max-height: 170px;
-  margin-top: 5px;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
+  word-wrap: break-word;
+}
 
+.other_post_layout {
+    width : 920px;
+
+}
+.other_post {
+  display: inline-flex;
+  width: 33%;
+  height: 450px;
+  word-break: break-all;
   
 }
 
-.other_post {
-  width: 33%;
-  height: 450px;
-  word-break:break-all;
-  float: left;
-  margin-right: 3px;
-  margin-top: 15px;
-}
-
-.other_post_image {
+.other_post_layout img {
   width: 300px;
   height: 300px;
 }
 
-.other_article_h1 {
+.other_post_layout h1 {
   font-family: sans-serif;
   font-size: 24px;
   color: black;
-  margin-bottom: 5px;
-
-  width: 300px;
-  max-height: 30px;
-  display: -webkit-box;
   margin-top: 0px;
+  margin-bottom: 5px;
+  /*말줄임*/
+  max-height: 100px;
+  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
+  word-wrap: break-word;
 }
 
-.other_article_detail {
+.other_post_detail {
   font-family: sans-serif;
   font-size: 15px;
   color: dimgrey;
@@ -138,58 +138,71 @@ li {
   margin-bottom: 5px;
 }
 
-.other_article_p {
+.other_post_p {
   font-family: sans-serif;
   font-size: 12px;
   color: black;
-  width: 300px;
-  max-height: 100px;
-  display: -webkit-box;
   margin-top: 0px;
+  margin-bottom: 5px;
+  /*말줄임*/
+  max-height: 170px;
+  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp:6;
-  margin-bottom: 0px;
+  -webkit-line-clamp: 3;
+  word-wrap: break-word;
 }
 
-a {
+.other_post a {
   text-decoration: none;
 }
 
-hr {
-  size: 1px;
-  color: dimgrey;
-  margin-top: 45px;
-  margin-bottom: 0px;
+.page_number {
+  margin-bottom: 20px;
 }
-
-.page_number{
-  position: absolute; 
-  width: 920px; 
-  height: 20px; 
-  bottom: 0px; 
-  left: 50%; 
-  transform: translateX(-50%);
-}
-
-.page_number_a {
-  color:black;
+.page_number a {
   font-family: sans-serif;
-  font-size: 24px;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
 }
 
 
 /*search.html*/
 .search_main_frame {
-  position:absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
+  width : 920px;
+  height: 300px;
 }
-.search_bar {
+.search_form {
   
 }
+
+.text_box {
+  border-color: rgb(43, 43, 43);
+  border-radius: 3px;
+  width: 300px;
+  height: 20px;
+}
+
+.button {
+  border-color: rgb(43, 43, 43);
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  width: 50px;
+  height: 27px;
+}
+.post_result {
+  position: relative;
+  top : 20px;
+  height: 300px;
+}
+
+.search_main_frame hr {
+  position: relative;
+  margin-top: 0px;
+}
+
 
 /*post_write.html*/
 .post_write_main_frame {
