@@ -1,1 +1,21 @@
-catagory.html
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="search_main_frame">
+    {% for post in post_result %}
+    <div class="first_post">
+        <a href="/post_view/?post_info={{ post.id }}">
+            <img srcset="{{ post.file_dir }}title_image.jpg">
+            <h1> {{ post.title }} </h1>
+            <p class="first_post_detail">{{ post.author }} {{ post.pub_date }} {{ post.category }}</p>
+            <p class="first_post_p">{{ post.content }}</p> 
+        </a>
+        
+    </div>
+    <hr>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
