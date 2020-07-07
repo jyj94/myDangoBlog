@@ -26,6 +26,9 @@ urlpatterns = [
     path('category/', blogapp.views.category, name='category'),
     path('post_view/', blogapp.views.post_view, name='post_view'),
     path('post_write/', blogapp.views.post_write, name='post_write'),
+    path('login/', blogapp.views.my_login, name='login'),
+    path('logout/', blogapp.views.my_logout, name='logout'),
+    path('post_edit/', blogapp.views.post_edit, name='post_edit'),
 ]
 
 

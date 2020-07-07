@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<img srcset="{{ post.file_dir }}title_image.jpg">
-<h1> {{ post.title }} </h1>
-<p class="first_post_detail">{{ post.author }} {{ post.pub_date }} {{ post.category }}</p>
-<p class="first_post_p">{{ post.content }}</p> 
-<p class="first_post_p">tag : {{ post.tag }}</p> 
 
+<link rel="stylesheet" href="{% static 'css/post_view.css' %}">
+
+<img srcset="/media/{{ post.file_dir }}">
+<h1> {{ post.title }} 
+{% if request.user == post.author %}
+<a href="/post_write/?post_info={{ post.id }}">편집</a>
+{% endif %}
+</h1>
+<p class="first_post_detail">{{ post.author }} {{ post.pub_date }} {{ post.category }}</p>
+<p class="first_post_p">{{ post.content|safe }}</p> 
+<p class="first_post_p">tag : {{ post.tag }}</p> 
 
 {% endblock %}

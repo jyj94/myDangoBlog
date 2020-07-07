@@ -1,13 +1,42 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-<div class="post_write_main_frame">
-<h3>글쓰기</h3>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="저장"/>
-    </form>
-</div>
+<link rel="stylesheet" href="{% static 'css/post_write.css' %}">
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="post_write_title">
+        <input class="post_write_title_text" autocomplete="off" name="title" type="text" id="title">
+    </div>
+    <button class="publish">publish</button>
+    <select class="section" name="category">
+        {% for category in category_list%}
+        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+        {% endfor %}
+    </select>
+    <p class="tag"> tag </p>
+    <input class="tag_box" autocomplete="off" type="text" name="tag" id="tag">
+    <input class="post_img" type="file" name="post_img">
+    <div class="post_write_main_frame">
+        <div class="buttons_layer">
+            <button class="buttons_layer_button" type="button" id="bold_button"><img src="{% static 'img/bold_img.png' %}"></img></button>
+            <button class="buttons_layer_button" type="button" id="italic_button"><img src="{% static 'img/italic_img.png' %}"></button>
+            <button class="buttons_layer_button" type="button" id="H_button"><img src="{% static 'img/h_img.png' %}"></button>
+            <button class="buttons_layer_button" type="button" onclick="input_quote()"><img src="{% static 'img/quote_img.png' %}"></button>
+        </div>    
+        <textarea class="post_write_content" name="content" id="content"></textarea>
+
+    </div>
+    <script src="/static/js/post_write.js" type="text/javascript"></script>
+    <script>
+        if ({{ edit_flag }} == 1){
+            title = document.getElementById("title");
+            title.value = "{{ post.title }}";
+            content.id.value = "{{ post.content }}";
+            tag = document.getElementById('tag');
+            tag.value = "{{ post.tag }}";
+        }
+</script>
+</form>
 {% endblock %}

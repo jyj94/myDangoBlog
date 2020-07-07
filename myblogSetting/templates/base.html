@@ -12,7 +12,17 @@
     <nav class="navigation">
         
         <a class="logo" href="{% url 'index' %}">jyj's blog</a>
-        
+        <div class="category_layout">
+            {% for category in category_list %}
+            <a class="category" href="/category/?category={{ category }}">{{ category }}</a>
+            {% endfor %}
+            {% if request.user.is_authenticated %}
+            <a class="category" href="/logout/">logout</a> 
+            <a class="category" href="/post_write/">post write</a>
+            {% else %}
+            <a class="category" href="/login/">login</a>
+            {% endif %}
+        </div>
         <a class="search_button" href="{% url 'search' %}">
             <img class="search_button_image" src="{% static 'img/search_button.png'%}">
         </a>

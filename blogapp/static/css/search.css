@@ -1,0 +1,36 @@
+/*search.html*/
+.search_main_frame {
+    width : 920px;
+    height: 300px;
+  }
+  .search_form {
+    
+  }
+  
+  .text_box {
+    border-color: rgb(43, 43, 43);
+    border-radius: 3px;
+    width: 300px;
+    height: 20px;
+  }
+  
+  .button {
+    border-color: rgb(43, 43, 43);
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    width: 50px;
+    height: 27px;
+  }
+  .post_result {
+    position: relative;
+    top : 20px;
+    height: 300px;
+  }
+  
+  .search_main_frame hr {
+    position: relative;
+    margin-top: 0px;
+  }
+  
+  
+  

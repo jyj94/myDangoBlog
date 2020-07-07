@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="login_main_frame">
+<h3>test</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+        ID : <input name="username" type="text"><br>
+        passwd : <input name="password" type="password">
+        <input type="submit" value="Login"/>
+    </form>
+</div>
+{% if alert_flag == True%}
+<script>
+        alert("아이디 혹은 비밀번호가 일치하지 않습니다.")
+</script>
+{% endif %}
+{% endblock %}

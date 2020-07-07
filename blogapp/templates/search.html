@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
 
 <div class="search_main_frame">
     <div class="search_form">
@@ -14,19 +16,28 @@
         </form>
     <div>
     
-    {% for post in post_result %}
+    {% for post in post_list %}
     <div class="first_post">
         <a href="/post_view/?post_info={{ post.id }}">
-            <img srcset="{{ post.file_dir }}title_image.jpg">
+            <img srcset="/media/{{ post.file_dir }}">
             <h1> {{ post.title }} </h1>
             <p class="first_post_detail">{{ post.author }} {{ post.pub_date }} {{ post.category }}</p>
-            <p class="first_post_p">{{ post.content }}</p> 
+            <p class="first_post_p">{{ post.content|striptags }}</p> 
         </a>
-        
     </div>
     <hr>
     {% endfor %}
 
+    <div class="page_number">
+        {% if post_list.has_previous %}
+            <a class="page_number_a" href="?keyword={{ keyword }}&page_info={{ post_list.previous_page_number }}">이전으로</a>
+        {% endif %}
+            
+        {% if post_list.has_next %}
+            <a class="page_number_a" href="?keyword={{ keyword }}&page_info={{ post_list.next_page_number }}"> 다음으로</a>
+        {% endif %}
+    </div>
+    
 </div>
 
 {% endblock %}

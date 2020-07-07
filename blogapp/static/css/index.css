@@ -1,0 +1,129 @@
+/*index.html*/
+.first_post {
+    width : 920px;
+    height: 300px;
+  }
+  
+  .first_post a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .first_post img {
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-right: 5px;
+  }
+  
+  .first_post h1 {
+    width: 610px;
+    position: relative;
+    top: 20px;
+  
+    /*말줄임*/
+    max-height: 100px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-wrap: break-word;
+  
+  }
+  
+  .first_post_detail {
+    width: 610px;
+    height: 10px;
+    position: relative;
+    top: 20px;
+  }
+  
+  .first_post_p {
+    width: 610px;
+    position: relative;
+    top: 30px;
+  
+    /*말줄임*/
+    max-height: 170px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    word-wrap: break-word;
+  }
+  
+  .other_post_layout {
+      width : 920px;
+  
+  }
+  .other_post {
+    display: inline-flex;
+    width: 33%;
+    height: 450px;
+    word-break: break-all;
+    
+  }
+  
+  .other_post_layout img {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .other_post_layout h1 {
+    font-family: sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    /*말줄임*/
+    max-height: 100px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-wrap: break-word;
+  }
+  
+  .other_post_detail {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: dimgrey;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  
+  .other_post_p {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    /*말줄임*/
+    max-height: 170px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    word-wrap: break-word;
+  }
+  
+  .other_post a {
+    text-decoration: none;
+  }
+  
+  .page_number {
+    margin-bottom: 20px;
+  }
+  .page_number a {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+  }
+  
+  
+  
