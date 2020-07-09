@@ -7,7 +7,7 @@
 <form method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="post_write_title">
-        <input class="post_write_title_text" autocomplete="off" name="title" type="text" id="title">
+        <input class="post_write_title_text" autocomplete="off" maxlength="100" name="title" type="text" id="title">
     </div>
     <button class="publish">publish</button>
     <select class="section" name="category">
@@ -22,10 +22,17 @@
         <div class="buttons_layer">
             <button class="buttons_layer_button" type="button" id="bold_button"><img src="{% static 'img/bold_img.png' %}"></img></button>
             <button class="buttons_layer_button" type="button" id="italic_button"><img src="{% static 'img/italic_img.png' %}"></button>
+            <button class="buttons_layer_button" type="button" id="strike_button"><img src="{% static 'img/strike_img.png' %}"></button>
             <button class="buttons_layer_button" type="button" id="H_button"><img src="{% static 'img/h_img.png' %}"></button>
-            <button class="buttons_layer_button" type="button" onclick="input_quote()"><img src="{% static 'img/quote_img.png' %}"></button>
+            <button class="buttons_layer_button" type="button" id="quote_button"><img src="{% static 'img/quote_img.png' %}"></button>
+            <button class="buttons_layer_button" type="button" id="dot_button"><img src="{% static 'img/dot_img.png' %}"></button>
+            <button class="buttons_layer_button" type="button" id="number_button"><img src="{% static 'img/number_img.png' %}"></button>
+            <button class="buttons_layer_button" type="button" id="link_button"><img src="{% static 'img/link_img.png' %}"></button>
+            <input class="buttons_layer_button_img" type="file" id="img_button" style='display: none;'></input>
+            <button class="buttons_layer_button" type="button" onclick="document.getElementById('img_button').click()"><img src="{% static 'img/img_img.png' %}"></button>
         </div>    
-        <textarea class="post_write_content" name="content" id="content"></textarea>
+        <textarea class="post_write_content" name="content" id="result_text_area"></textarea>
+        <div class="text_div" contenteditable id="text_div"></div>
 
     </div>
     <script src="/static/js/post_write.js" type="text/javascript"></script>
@@ -33,7 +40,14 @@
         if ({{ edit_flag }} == 1){
             title = document.getElementById("title");
             title.value = "{{ post.title }}";
-            content.id.value = "{{ post.content }}";
+            content.id.value = "";
+            {% for line in post.content %}
+            {% if forloop.revcounter != 1%}
+            content.id.value = content.id.value + "{{line}}\n";
+            {% else %}
+            content.id.value = content.id.value + "{{line}}";
+            {% endif %}
+            {% endfor %}
             tag = document.getElementById('tag');
             tag.value = "{{ post.tag }}";
         }

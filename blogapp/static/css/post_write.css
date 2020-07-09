@@ -80,15 +80,21 @@
     border: 1px solid rgb(177, 177, 177);
     border-radius: 3px;
   }
+
   .post_write_content {
-    position: relative;
-    top: 17px;
-    margin-left: 15px;
-    width: 893px;
-    height: 590px;
-    border: 0px;
-    resize: none;
+    display: none;
   }
-  .post_write_content:focus {
+
+  .text_div {
+    border: 1px solid;
+    width: 900px;
+    height: 580px;
+    overflow: scroll;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text_div:focus {
     outline: none;
   }

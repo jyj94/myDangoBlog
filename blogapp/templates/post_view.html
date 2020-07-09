@@ -3,8 +3,9 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/post_view.css' %}">
-
-<img srcset="/media/{{ post.file_dir }}">
+{% if post.file_dir != "1" %}
+    <img srcset="/media/{{ post.file_dir }}">
+{% endif %}
 <h1> {{ post.title }} 
 {% if request.user == post.author %}
 <a href="/post_write/?post_info={{ post.id }}">편집</a>

@@ -16,19 +16,16 @@
   font-size: 200%;
   text-decoration: none;
   top: 5px;
-  position: relative;
-  left: 50px;
-  margin-left: 50px;
-  margin-right: 50px; 
   float: left;
+  margin-left: 20px;
+  margin-right: 20px; 
 }
 .category_layout { 
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
   width: 70%;
-  top: 7px;
-  position: relative;
+  float: left;
 }
 .category_layout::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
@@ -43,9 +40,9 @@
 }
 
 .search_button {
-  position: absolute;
-  right: 50px;
-  top: 5px;
+  float: right;
+  margin-right: 20px;
+  top: 2px;
 }
 
 .search_button_image {
@@ -55,7 +52,7 @@
 
 .wrap {
   background-color: rgb(255, 255, 255);
-  width : 920px;
+  width : 940px;
   margin-top: 70px;
   margin-bottom: 0px;
   margin-left: auto;

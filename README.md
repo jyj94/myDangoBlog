@@ -15,8 +15,11 @@
 * post_write 작성(기본 형식, markdown 형식) : post 작성
 * ~~search 작성(DB의 title, content, tag 이용)~~
 * 전체 기능 구현 후 레이아웃 다시 짜기(div)
+* 로그인 세션 관리
 
-## history
+## history 
+* 2020.07.09 - textarea 서식을 위해 div contenteditable으로 변경
+* 2020.07.08 - 이미지 처리 구현, 마크다운(quote, strike, dot, number, link, )
 * 2020.07.07 - 이미지 확장자 별로 올리고 화면별 처리 구현, 마크다운(bold, italic, >)구현
 * 2020.07.06 - 로그인 로그아웃 구현, post_write 뼈대 구성
 * 2020.07.05 - Paginator 구현, 네비게이션 바 카테고리 정렬
